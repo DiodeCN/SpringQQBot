@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller
 @Controller
 class WebSocketController {
 
-    @MessageMapping("/websocket")
+    @MessageMapping("/")
     @SendTo("/topic/messages")
     fun receiveMessage(headerAccessor: SimpMessageHeaderAccessor): String {
         val message = headerAccessor.sessionAttributes?.get("message") ?: "No message"
